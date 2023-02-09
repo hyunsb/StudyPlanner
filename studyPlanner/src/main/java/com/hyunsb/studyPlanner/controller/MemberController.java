@@ -10,4 +10,9 @@ public class MemberController {
     public String loginForm(){
         return "/member/loginform";
     }
+
+    @GetMapping("/member/createform")
+    public String createForm(){
+        return "/member/createform";
+    }
 }
