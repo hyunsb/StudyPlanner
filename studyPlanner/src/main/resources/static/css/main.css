@@ -322,3 +322,25 @@ img {
 .content__planlist-att {
     display: flex;
 }
+
+.login_section{
+    min-height: 100vh;
+    place-items: center;
+    display: grid;
+}
+
+.login__main {
+
+    place-items: center;
+    display: grid;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    width: 1000px;
+    height: 600px;
+    background-color: var(--body-color);
+
+    margin: auto;
+}
