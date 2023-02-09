@@ -2,10 +2,14 @@ package com.hyunsb.studyPlanner.dto;
 
 import com.hyunsb.studyPlanner.Entity.MemberEntity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString
 public class MemberDTO {
 
     private int id;
@@ -16,7 +20,7 @@ public class MemberDTO {
 
     private String name;
 
-    public MemberDTO toMemberDTO(MemberEntity memberEntity){
+    public static MemberDTO toMemberDTO(MemberEntity memberEntity){
         MemberDTO memberDTO = new MemberDTO();
         memberDTO.setId(memberEntity.getId());
         memberDTO.setEmail(memberEntity.getEmail());

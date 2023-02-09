@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>memberEmail</th>
+    <th>memberPassword</th>
+    <th>memberName</th>
+  </tr>
+
+  <tr th:each="member : ${memberList}">
+    <td th:text="${member.getId()}"></td>
+    <td th:text="${member.getEmail()}"></td>
+    <td th:text="${member.getPassword()}"></td>
+    <td th:text="${member.getName()}"></td>
+  </tr>
+
+
+</body>
+</html>
