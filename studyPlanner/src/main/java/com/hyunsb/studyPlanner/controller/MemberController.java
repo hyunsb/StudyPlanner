@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
@@ -18,18 +20,30 @@ public class MemberController {
 
     /* 로그인 기능 */
     @GetMapping("/member/loginform")
-    public String loginForm(){
+    public String MemberLoginForm(){
         return "/member/loginform";
+    }
+
+    @PostMapping("/member/login")
+    public String MemberLogin(@ModelAttribute MemberDTO memberDTO, Model model, HttpSession session){
+        memberService.login(memberDTO);
+
+        model.addAttribute("message", "로그인 성공");
+        model.addAttribute("searchUrl", "/");
+
+        session.setAttribute("loginEmail", memberDTO.getEmail());
+
+        return "/member/message";
     }
 
     /* 회원가입 기능 */
     @GetMapping("/member/createform")
-    public String createForm(){
+    public String MemberCreateForm(){
         return "/member/createform";
     }
 
     @PostMapping("/member/create")
-    public String create(@ModelAttribute MemberDTO memberDTO, Model model){
+    public String MemberCreate(@ModelAttribute MemberDTO memberDTO, Model model){
         memberService.save(memberDTO);
 
         model.addAttribute("message", memberDTO.getName() + "님 회원가입이 완료 되었습니다.");
@@ -37,9 +51,6 @@ public class MemberController {
 
         return "/member/message";
     }
-
-
-
 
 
 
