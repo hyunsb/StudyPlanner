@@ -224,6 +224,9 @@ img {
     text-align: center;
 }
 
+.plan {
+    padding-top: 100px;
+}
 
 .plan__container {
     margin: auto;

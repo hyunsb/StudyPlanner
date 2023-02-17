@@ -10,5 +10,8 @@
         <module name="studyPlanner.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="studyPlanner" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

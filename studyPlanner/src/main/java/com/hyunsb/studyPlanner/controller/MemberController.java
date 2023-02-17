@@ -3,7 +3,6 @@ package com.hyunsb.studyPlanner.controller;
 import com.hyunsb.studyPlanner.dto.MemberDTO;
 import com.hyunsb.studyPlanner.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,11 +28,12 @@ public class MemberController {
         memberService.login(memberDTO);
 
         model.addAttribute("message", "로그인 성공");
-        model.addAttribute("searchUrl", "/");
+        model.addAttribute("searchUrl", "../planner/home");
 
         session.setAttribute("loginEmail", memberDTO.getEmail());
 
-        return "/member/message";
+//        return "/planner/home";
+        return "message";
     }
 
     /* 회원가입 기능 */
@@ -49,7 +49,7 @@ public class MemberController {
         model.addAttribute("message", memberDTO.getName() + "님 회원가입이 완료 되었습니다.");
         model.addAttribute("searchUrl", "/member/loginform");
 
-        return "/member/message";
+        return "message";
     }
 
 

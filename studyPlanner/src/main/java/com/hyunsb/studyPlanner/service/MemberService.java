@@ -17,7 +17,6 @@ import java.util.Optional;
 public class MemberService {
 
     private final MemberRepository memberRepository;
-    private MemberValidate memberValidate;
 
     public MemberDTO login(MemberDTO memberDTO) {
         Optional<MemberEntity> byEmail = memberRepository.findByEmail(memberDTO.getEmail());

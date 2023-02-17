@@ -3,8 +3,10 @@ package com.hyunsb.studyPlanner.vaildate;
 import com.hyunsb.studyPlanner.Repository.MemberRepository;
 import com.hyunsb.studyPlanner.dto.MemberDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 
 @RequiredArgsConstructor
+@Validated
 public class MemberValidate {
 
     private final MemberRepository memberRepository;
