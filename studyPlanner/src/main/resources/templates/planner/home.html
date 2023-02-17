@@ -40,7 +40,9 @@
 </header>
 
 <div>
-
+    <th:block th:if="${sessionValue}">
+        <h1>세션이 존재합니다.</h1>
+    </th:block>
     <h1>session</h1>
     <h1 th:text="${session.loginEmail}"></h1>
 
